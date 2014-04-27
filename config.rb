@@ -77,4 +77,6 @@ configure :build do
   require "middleman-smusher"
     activate :smusher
 
+  require "bootstrap-sass"
+    activate :bootstrap
 end

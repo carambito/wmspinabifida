@@ -80,7 +80,8 @@ h1,h2,h3,h4 {
 
 header {
   background: #f16251;
-  height:550px;
+  height: 300px;
+  // height:70px;
   color:#000000;
 }
 
@@ -99,14 +100,10 @@ header h3 {
   padding:12px 10px 6px 10px;
 }
 
-header .dropdown-menu {
-  top:74px;
-  background: #ffcc33;
-  border-width:0;
-}
-
 h1 {
-  font-size:50px;
+  margin: 0;
+  font-size:14px;
+  font-family: $raleway;
 }
 
 #nav {
@@ -137,23 +134,16 @@ h1 {
 
 /* customize nav style */
 .navbar-custom {
-    background-color: #2e2e2e;
+  background-color: #2e2e2e;
   font-weight:700;
-    text-transform:uppercase;
-    border-width:0;
+  text-transform:uppercase;
+  border-width:0;
 }
 .navbar-custom  .navbar-nav>li>a {
   color: #ddd;
 }
 .navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
   background-color: #000;
-}
-.navbar-custom .dropdown-menu{
-  right:0;
-}
-.navbar-custom .navbar-nav>.dropdown>a .caret {
-  border-top-color: #999;
-  border-bottom-color: #999;
 }
 
 .navbar-collapse.in {

@@ -1,3 +1,1 @@
-= require plugins
-= require bootstrap
-= require_tree .
+//= require_tree .

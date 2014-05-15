@@ -11,9 +11,24 @@ $h5bp-link: #0000ee;
 $h5bp-visited-link: #551a8b;
 $raleway: 'Raleway', 'sans-serif';
 
+// COLORS
+$white: #FFFFFF;
+$black: #3a4243;
+$blue:  #00afa7;
+$red:   #ea652f;
+$green: #b0d136;
+$gray:  #565f61;
+$stone: #abb8b8;
+
+$red80:    #ee8460;
+$blue80:   #3abfba;
+$green80:  #c1da6a;
+
+$blue30:    #b9e2e1;
+$red30:   #f9d1c4;
+$green30:  #e7f0c7;
+
 @import "html5boilerplate/main";
-
-
 
 // 960.gs Grid System - uncomment to use
 //  don't forget to uncomment the "require 'ninesixty'" line in config.rb!
@@ -58,10 +73,12 @@ body {
 /* Custom page CSS
 -------------------------------------------------- */
 
-#wrap > .container {
-  padding: 60px 15px 0;
+.container-fluid {
+  padding-left: 2%;
+  padding-right: 2%;
 }
-.container .credit {
+
+.container-fluid .credit {
   margin: 20px 0;
 }
 
@@ -74,36 +91,17 @@ body {
 }
 
 h1,h2,h3,h4 {
-  font-family: 'Kreon', serif;
+  font-family: $raleway;
   vertical-align:middle;
 }
 
-header {
-  background: #f16251;
-  height: 300px;
-  // height:70px;
-  color:#000000;
-}
-
-header h1,header h2,header h3 a,header a,header a:hover {
-  color:#101010;
-  font-weight:800;
-  text-decoration:none;
-}
-
 header h3 {
-  font-family: 'Kreon', serif;
+  font-family: $raleway;
   background: #ffcc33;
   padding:10px;
   border-radius:3px;
   font-size:34px;
   padding:12px 10px 6px 10px;
-}
-
-h1 {
-  margin: 0;
-  font-size:14px;
-  font-family: $raleway;
 }
 
 #nav {
@@ -119,115 +117,519 @@ h1 {
    -webkit-transition: all .6s ease-in-out;
 }
 
-#footer > .container {
-
-}
-
-@media (min-width: 767px) {
-  .navbar-nav.nav-justified > li{
-      float:none;
-  }
-}
 .navbar-nav {
-  margin: 1px 1px;
+  margin: 1px;
+}
+
+.navbar-nav > li > a {
+  padding: 30px;
 }
 
 /* customize nav style */
 .navbar-custom {
-  background-color: #2e2e2e;
-  font-weight:700;
+  background-color: $white;
+  font-family: $raleway;
   text-transform:uppercase;
   border-width:0;
 }
 .navbar-custom  .navbar-nav>li>a {
-  color: #ddd;
+  color: $gray;
 }
-.navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
-  background-color: #000;
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
+  background: transparent;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background: transparent;
+  color: lighten($gray, 40%);
+}
+
+.navbar-custom .navbar-nav .active a  {
+  color: lighten($gray, 40%);
+}
+
+.navbar-custom .navbar-nav li>a:hover, .navbar-nav li .open {
+  color: lighten($gray, 40%);
+  @include text-shadow(lighten($gray, 60%) 1px 1px 0);
+}
+
+.navbar,
+.navbar-collapse {
+  border-bottom: 1px solid #c3c3c3;
 }
 
 .navbar-collapse.in {
-/*3.0.2 bug workaround		*/
-    overflow-y: visible;
+/*3.0.2 bug workaround */
+  overflow-y: visible;
 }
 
 .navbar-toggle {
   outline:0;
 }
 
+.main-menu {
+  text-align: center;
+
+  ul {
+    height: 60px;
+  }
+
+  li {
+    width: 100%;
+    border-top: 1px solid #ddd;
+  }
+}
+
+.nav-home {
+  height: 60px;
+
+  a {
+    background: url('/images/logo.png') no-repeat center center;
+    text-indent: -9000px;
+  }
+}
+
+#wrap > .container-fluid {
+  padding: 0;
+}
+
+.navbar-header {
+ height: 78px;
+}
+
+.divider-mini {
+  @include clearfix;
+
+  .blank-hr {
+    float: left;
+    width: 100%;
+    height: 8px;
+    background-color: $white;
+  }
+
+  .color-hr {
+    float: left;
+    bottom: 0;
+    width: 33.33%;
+    height: 8px;
+  }
+
+  &.header {
+    .color-hr {
+      height: 90px;
+    }
+  }
+  .red {
+    background-color: $red80;
+  }
+  .green {
+    background-color: $green80;
+  }
+  .blue {
+    background-color: $blue80;
+  }
+}
+
 .divider {
-  height:100px;
+  height:60px;
 }
 
 .panel {
   border-width:0;
 }
 
-@media (max-width: 768px) {
-  header {
-    height: 95px;
+// carousel
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+
+.carousel {
+  .item {
+    height: 100%;
+    background-size: inherit;
   }
 }
 
-#map-canvas {
-    width: 100%;
-    height: 300px;
-  margin: 0;
-  padding: 15px;
+//blockquote
+blockquote {
+  margin: 0 .75em;
+  padding: 30px 0;
+  border-left: 0;
+  color: $blue80;
+  font-family: $raleway;
+  font-size: 1.8em;
+  quotes: "\201C""\201D""\2018""\2019";
+
+  footer {
+    color: $blue80;
+  }
 }
 
-.scroll-top {
-   position:fixed;
-   bottom:0;
-   right:6%;
-   z-index:100;
-   background: #ffcc33;
-   font-size:24px;
-   border-top-left-radius:3px;
-   border-top-right-radius:3px;
-}
-.scroll-top a:link,.scroll-top a:visited {
-  color:#222;
+blockquote:before {
+  float: left;
+  color: $blue80;
+  font-family: $raleway;
+  content: "\201C";
+  line-height: 1em;
+  margin-right: 0.15em;
+  vertical-align: -10em;
 }
 
+blockquote p {
+  display: inline;
+}
 
-section {
+.snippet-block {
+  padding-left: 60px;
+  padding-right: 60px;
+  @include clearfix;
+
+
+  h1, p, a {
+    color: $blue80;
+  }
+
+  h1 {
+    font-family: $raleway;
+    font-size: 2.35em;
+  }
+
+  p {
+    padding: 20px 0;
+    line-height: 1.35;
+    font-size: 1.35em;
+  }
+}
+
+//sections
+
+.masthead {
   color: #ffffff;
-  min-height: 400px;
+  min-height: 693px;
   height: auto !important;
   height: 100%;
-  padding-top:100px;
+  padding-top: 100px;
+
+  background: url('../images/introduction-01.jpg') no-repeat center 0% fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  h1 {
+    padding: 18% 20px 20px;
+    line-height: 1.12;;
+  }
+
+  small {
+    color: $white;
+  }
 }
 
-.bg-1 {
-  background: url('http://www.bootply.com/assets/example/bg_4.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.section-header {
+  padding: 15px 0;
+
+  h1, h2, h3, p, strong, a {
+    color: $white;
+  }
+
+  h1 {
+    font-size: 2.35em;
+  }
+
+  .description {
+    margin-bottom: 24px;
+    font-size: 1.35em;
+    line-height: 1.32;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
-.bg-2 {
-  background: url('http://www.bootply.com/assets/example/bg_5.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.section-nav {
+  border-bottom: 0;
 }
 
-.bg-3 {
-  background: url('http://www.bootply.com/assets/example/bg_6.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.section-nav > .section-nav-item {
+  @include box-sizing('border-box');
+
+  > a {
+    border-radius: none;
+    text-decoration: none;
+    outline: none;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+
+    .boundary-box {
+      display: block;
+      padding: 20px;
+    }
+
+    strong {
+      display: block;
+      font-weight: bold;
+      font-size: 1.05em;
+      line-height: 1.5em;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+
+      .boundary-box {
+        border: 1px solid $white;
+      }
+
+      strong,
+      .section-nav-item-detail {
+        color: $white;
+      }
+    }
+  }
+
+  &.active {
+    > a {
+      .boundary-box {
+        border: 1px solid $white;
+      }
+    }
+
+    strong,
+    .section-nav-item-detail {
+      color: $white;
+    }
+  }
 }
 
-.bg-4 {
-  padding-top:30px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,20,20,0.2)),to(rgba(255,255,255,0)), color-stop(1,#000));
+.section-nav-item-detail {
+  display: none;
+  font-size: 1.33em;
+  line-height: 1.6em;
 }
 
+.exploring {
+  .section-header {
+    background: $red;
+  }
+
+  .section-nav-item {
+    strong,
+    .section-nav-item-detail {
+      color: $red80;
+    }
+
+    > a .boundary-box {
+      border: 1px solid $red80;
+    }
+  }
+
+  .info-content-container {
+    background: $red80;
+  }
+
+  .tab-content h3 {
+    color: $red30;
+  }
+}
+
+.meeting {
+  .section-header {
+    background: $green;
+  }
+
+  .section-nav-item {
+    strong,
+    .section-nav-item-detail {
+      color: $green80;
+    }
+
+    > a .boundary-box {
+      border: 1px solid $green80;
+    }
+  }
+
+  .info-content-container {
+    background: $green80;
+  }
+
+  .tab-content h3 {
+    color: $green30;
+  }
+}
+
+.caring {
+  .section-header {
+    background: $blue;
+  }
+
+  .section-nav-item {
+    strong,
+    .section-nav-item-detail {
+      color: $blue80;
+    }
+
+    > a .boundary-box {
+      border: 1px solid $blue80;
+    }
+  }
+
+  .info-content-container {
+    background: $blue80;
+  }
+
+  .tab-content h3 {
+    color: $blue30;
+  }
+}
+
+.tab-content {
+  padding-top: 10px;
+  padding-bottom: 250px;
+
+  h1, h2, h3, p, ul, strong, a {
+    color: $white;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  h2 {
+    font-size: 1.25em;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.18em;
+    font-weight: 600;
+    @include column-break-after(avoid);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    line-height: 1.55;
+
+    > li {
+      list-style-type: none;
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .navbar-header,
+  .navbar-collapse {
+    border-bottom: 0;
+  }
+
+  .nav-home {
+    height: 30px;
+
+    a {
+      float: left;
+      width: 139px;
+      }
+    }
+
+  .main-menu {
+    float: right;
+
+    ul {
+      height: 30px;
+    }
+
+    li {
+      width: auto;
+      border-top: 0px;
+    }
+  }
+
+  .section-nav-item {
+    margin-bottom: 30px;
+
+    strong {
+      display: block;
+      font-weight: bold;
+      font-size: 1.8em;
+      line-height: 1.5em;
+    }
+  }
+
+  .section-nav-item-detail {
+    display: inline;
+  }
+
+  .information-roll {
+    @include column-count(3);
+    @include column-gap(2em);
+  }
+
+  .section-header {
+    padding: 30px 0 0;
+
+    h1 {
+      font-size: 4.55em;
+    }
+
+    .description {
+      font-size: 2.35em;
+    }
+  }
+
+  blockquote {
+    margin: 0 .75em;
+    padding: 30px 0;
+    font-size: 2.3em;
+    line-height: 1.35;
+  }
+
+  blockquote:before {
+    font-size: 200px;
+    line-height: .8em;
+    margin-right: 0.15em;
+    vertical-align: -10em;
+  }
+
+  .snippet-block {
+    h1 {
+      line-height: 2.1;
+      font-size: 5.2em;
+    }
+
+    p {
+      padding: 60px 0;
+      line-height: 1.4;
+      font-size: 1.8em;
+    }
+  }
+
+  .page-footer {
+    font-family: $raleway;
+    padding: 60px 0;
+    font-size: 1.33em;
+    line-height: 1.6em;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: $gray;
+    }
+  }
+}
 
 // These imports should remain below the bulk of the stylesheet so they can override correctly.
 @import "html5boilerplate/nonsemantichelpers", "html5boilerplate/mediaqueries"

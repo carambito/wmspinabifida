@@ -1,14 +1,9 @@
-
 // customize bootstrap variables here:
-@import "bootstrap";
-
 @import "compass";
+@import "bootstrap";
+@import "font-awesome";
 
-// HTML5 Boilerplate Colors - uncomment to use
-$h5bp-text-selection: rgba(0, 0, 0, 0);
-$h5bp-webkit-tap: #ff5e99;
-$h5bp-link: #0000ee;
-$h5bp-visited-link: #551a8b;
+// FONTS
 $raleway: 'Raleway', 'sans-serif';
 
 // COLORS
@@ -28,14 +23,8 @@ $blue30:    #b9e2e1;
 $red30:   #f9d1c4;
 $green30:  #e7f0c7;
 
-@import "html5boilerplate/main";
-
-// 960.gs Grid System - uncomment to use
-//  don't forget to uncomment the "require 'ninesixty'" line in config.rb!
-// @import "960grid"
-
-// Your own styles go here.
-// @import url(http://fonts.googleapis.com/css?family=Kreon:400,700);
+// Basic Vertical Gap
+$vgap: 30px;
 
 html,
 body {
@@ -51,7 +40,7 @@ body {
 }
 
 /* Wrapper for page content to push down footer */
-#wrap {
+.sections-wrap {
   min-height: 100%;
   height: auto !important;
   height: 100%;
@@ -69,10 +58,8 @@ body {
   padding-bottom:20px;
 }
 
-
 /* Custom page CSS
 -------------------------------------------------- */
-
 .container-fluid {
   padding-left: 2%;
   padding-right: 2%;
@@ -104,101 +91,141 @@ header h3 {
   padding:12px 10px 6px 10px;
 }
 
-#nav {
-  width: 100%;
-  position:static;
-  top:-32px;
-}
-
-#nav.affix {
-   position: fixed;
-   top: 0;
-   z-index:10;
-   -webkit-transition: all .6s ease-in-out;
-}
-
-.navbar-nav {
-  margin: 1px;
-}
-
-.navbar-nav > li > a {
-  padding: 30px;
-}
-
-/* customize nav style */
-.navbar-custom {
-  background-color: $white;
-  font-family: $raleway;
-  text-transform:uppercase;
-  border-width:0;
-}
-.navbar-custom  .navbar-nav>li>a {
-  color: $gray;
-}
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
-  background: transparent;
-}
-
-.navbar-inverse .navbar-nav > .active > a:hover {
-  background: transparent;
-  color: lighten($gray, 40%);
-}
-
-.navbar-custom .navbar-nav .active a  {
-  color: lighten($gray, 40%);
-}
-
-.navbar-custom .navbar-nav li>a:hover, .navbar-nav li .open {
-  color: lighten($gray, 40%);
-  @include text-shadow(lighten($gray, 60%) 1px 1px 0);
-}
-
-.navbar,
-.navbar-collapse {
-  border-bottom: 1px solid #c3c3c3;
-}
-
-.navbar-collapse.in {
-/*3.0.2 bug workaround */
-  overflow-y: visible;
-}
-
-.navbar-toggle {
-  outline:0;
-}
-
-.main-menu {
-  text-align: center;
-
-  ul {
-    height: 60px;
-  }
-
-  li {
-    width: 100%;
-    border-top: 1px solid #ddd;
-  }
-}
-
-.nav-home {
-  height: 60px;
-
-  a {
-    background: url('/images/logo.png') no-repeat center center;
-    text-indent: -9000px;
-  }
-}
-
-#wrap > .container-fluid {
+.sections-wrapper > .container-fluid {
   padding: 0;
 }
 
-.navbar-header {
- height: 78px;
+// Global Nav Styling
+.nav > li > a {
+  color: lighten($gray, 20%);
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    color: darken($gray, 30%);
+  }
 }
 
+// Header Container
+.header-nav {
+  width: 100%;
+  position: static;
+  background-color: $white;
+  font-family: $raleway;
+  text-transform: uppercase;
+  border-width: 0;
+}
+
+// Navigation Primary Vertical Displacement
+.header-nav .container-fluid {
+  padding-top: $vgap;
+  padding-bottom:  $vgap;
+}
+
+.masthead {
+  margin-top: $vgap*3.5;
+}
+
+.header-nav.affix {
+   position: fixed;
+   top: 0;
+   z-index: 10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+//identity
+.main-identity {
+  float: left;
+  margin: 0;
+
+  a {
+    @include inline-block;
+    padding: 0 2em;
+    background: url('/images/logo.png') no-repeat center center;
+    text-indent: -9000px;
+    outline: none;
+  }
+}
+
+.collapse {
+  @media (min-width: 767px) {
+    display: block;
+  }
+}
+
+// NAVBAR
+.navbar-container {
+  @media (min-width: 767px) {
+    float: right;
+  }
+
+  @media (max-width: 767px) {
+    clear: both;
+  }
+}
+
+// Nav-Items
+.nav-items > li {
+  @media (min-width: 767px) {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.nav-item a {
+  @media (max-width: 767px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.nav-items > .active > a,
+.nav-items > .active > a:focus {
+  background: transparent;
+  color: darken($gray, 50%);
+}
+
+.nav-items > .active > a:hover {
+  background: transparent;
+}
+
+.nav-item {
+  @media (max-width: 767px) {
+    width: 100%;
+    border-top: 1px solid #ddd;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
+
+// nav-trigger-small
+.navbar-trigger-container {
+  float: right;
+
+  @media (min-width: 767px) {
+    display: none;
+  }
+}
+
+.navbar-trigger {
+  color: $gray;
+  font-size: 2em;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: darken($gray, 30%);
+    outline: 0;
+  }
+}
+
+
+// component - divider
 .divider-mini {
+  width: 100%;
   @include clearfix;
 
   .blank-hr {
@@ -242,7 +269,9 @@ header h3 {
 // carousel
 .carousel-control.left,
 .carousel-control.right {
+  vertical-align: middle;
   background-image: none;
+  font-size: 40px;
 }
 
 .carousel {
@@ -304,22 +333,20 @@ blockquote p {
 }
 
 //sections
-
 .masthead {
-  color: #ffffff;
   min-height: 693px;
-  height: auto !important;
-  height: 100%;
-  padding-top: 100px;
+  height: auto;
 
-  background: url('../images/introduction-01.jpg') no-repeat center 0% fixed;
+  background: url('../images/introduction-01.jpg') no-repeat center ($vgap*3.5) fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: #ffffff;
 
   h1 {
-    padding: 18% 20px 20px;
+    margin-top: 300px;
+    padding: 20px;
     line-height: 1.12;;
   }
 
@@ -358,12 +385,13 @@ blockquote p {
   @include box-sizing('border-box');
 
   > a {
-    border-radius: none;
-    text-decoration: none;
-    outline: none;
     display: block;
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 0;
+    border-radius: none;
+    text-decoration: none;
+    outline: none;
 
     .boundary-box {
       display: block;
@@ -399,6 +427,20 @@ blockquote p {
       }
     }
 
+    .tab-indicator {
+      position: relative;
+      bottom: -5px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+
+      @media (max-width: 767px) {
+        outline: 1px solid red;
+        display: none;
+      }
+    }
+
     strong,
     .section-nav-item-detail {
       color: $white;
@@ -412,12 +454,19 @@ blockquote p {
   line-height: 1.6em;
 }
 
+
 .exploring {
   .section-header {
     background: $red;
   }
 
   .section-nav-item {
+    &.active .tab-indicator {
+      border-left: $vgap solid transparent;
+      border-right: $vgap solid transparent;
+      border-bottom: $vgap solid $red80;
+    }
+
     strong,
     .section-nav-item-detail {
       color: $red80;
@@ -443,6 +492,12 @@ blockquote p {
   }
 
   .section-nav-item {
+    &.active .tab-indicator {
+      border-left: $vgap solid transparent;
+      border-right: $vgap solid transparent;
+      border-bottom: $vgap solid $green80;
+    }
+
     strong,
     .section-nav-item-detail {
       color: $green80;
@@ -468,6 +523,12 @@ blockquote p {
   }
 
   .section-nav-item {
+    &.active .tab-indicator {
+      border-left: $vgap solid transparent;
+      border-right: $vgap solid transparent;
+      border-bottom: $vgap solid $blue80;
+    }
+
     strong,
     .section-nav-item-detail {
       color: $blue80;
@@ -511,9 +572,12 @@ blockquote p {
   }
 
   ul {
-    margin: 0;
-    padding: 0;
     line-height: 1.55;
+
+    @media (min-width: 767px) {
+      margin: 0;
+      padding: 0;
+    }
 
     > li {
       list-style-type: none;
@@ -521,36 +585,15 @@ blockquote p {
   }
 }
 
+.information-roll {
+  overflow: hidden;
+}
+
 @media (min-width: 767px) {
-  .navbar-header,
-  .navbar-collapse {
-    border-bottom: 0;
-  }
-
-  .nav-home {
-    height: 30px;
-
-    a {
-      float: left;
-      width: 139px;
-      }
-    }
-
-  .main-menu {
-    float: right;
-
-    ul {
-      height: 30px;
-    }
-
-    li {
-      width: auto;
-      border-top: 0px;
-    }
-  }
-
   .section-nav-item {
-    margin-bottom: 30px;
+    .boundary-box {
+      margin-bottom: 30px;
+    }
 
     strong {
       display: block;
@@ -630,6 +673,3 @@ blockquote p {
     }
   }
 }
-
-// These imports should remain below the bulk of the stylesheet so they can override correctly.
-@import "html5boilerplate/nonsemantichelpers", "html5boilerplate/mediaqueries"

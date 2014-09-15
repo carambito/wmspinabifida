@@ -3,6 +3,8 @@
 source 'http://rubygems.org'
 
 gem "middleman", "~>3.3.2"
+gem "bootstrap-sass"
+gem "font-awesome-middleman", :github => "trenton42/font-awesome-middleman", :branch => "master"
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"

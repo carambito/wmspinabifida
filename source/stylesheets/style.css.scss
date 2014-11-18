@@ -50,14 +50,6 @@ body {
   padding: 0 0 60px;
 }
 
-/* Set the fixed height of the footer here */
-#footer {
-  height: 60px;
-  margin-top:50px;
-  padding-top:20px;
-  padding-bottom:20px;
-}
-
 /* Custom page CSS
 -------------------------------------------------- */
 .container-fluid {
@@ -69,21 +61,45 @@ body {
   margin: 20px 0;
 }
 
-#footer {
-  background-color:#414141;
+.page-footer {
+  font-family: $raleway;
+  font-size: 1.33em;
+  line-height: 1.6em;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  a {
+    display: inline-block;
+    padding: 15px 0;
+    color: $gray;
+  }
+
+  @media (max-width: 767px) {
+    font-family: $raleway;
+    font-size: 1.33em;
+    line-height: 1.6em;
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    a {
+      color: $gray;
+    }
+  }
 }
 
-#footer a {
-  color:#efefef;
-}
 
 h1,h2,h3,h4 {
   font-family: $raleway;
-  vertical-align:middle;
 }
 
 header h3 {
-  font-family: $raleway;
   background: #ffcc33;
   padding:10px;
   border-radius:3px;
@@ -125,6 +141,8 @@ header h3 {
 
 .masthead {
   margin-top: $vgap*3.5;
+  color: $white;
+  background: $black;
 }
 
 .header-nav.affix {
@@ -141,8 +159,8 @@ header h3 {
 
   a {
     @include inline-block;
-    padding: 0 2em;
-    background: url('/images/logo.png') no-repeat center center;
+    width: 272px;
+    background: url('/images/logo.png') no-repeat left center;
     text-indent: -9000px;
     outline: none;
   }
@@ -173,7 +191,7 @@ header h3 {
   }
 }
 
-.nav-item a {
+.nav > .nav-item > a {
   @media (max-width: 767px) {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -283,12 +301,14 @@ header h3 {
 
 //blockquote
 blockquote {
-  margin: 0 .75em;
-  padding: 30px 0;
+  position: relative;
+  margin: 15px;
+  padding: 15px 60px;
+
   border-left: 0;
   color: $blue80;
   font-family: $raleway;
-  font-size: 1.8em;
+  font-size: 3em;
   quotes: "\201C""\201D""\2018""\2019";
 
   footer {
@@ -296,19 +316,30 @@ blockquote {
   }
 }
 
-blockquote:before {
-  float: left;
-  color: $blue80;
-  font-family: $raleway;
-  content: "\201C";
-  line-height: 1em;
-  margin-right: 0.15em;
-  vertical-align: -10em;
+.quote-wrapper:before,
+ .quote-wrapper:after {
+  position: absolute;
+  top: 0em;
+  line-height: 0.8em;
+  font-size: 420px;
 }
 
-blockquote p {
-  display: inline;
+.quote-wrapper:before {
+  left: -126px;
+  content: "\201C";
 }
+
+.quote-wrapper:after {
+  right: -126px;
+  content: "\201D";
+}
+
+.quote-wrapper p {
+  display: inline;
+  font-weight: 700;
+  font-size: 42px;
+}
+
 
 .snippet-block {
   padding-left: 60px;
@@ -323,6 +354,7 @@ blockquote p {
   h1 {
     font-family: $raleway;
     font-size: 2.35em;
+    margin: 0.67em 0;
   }
 
   p {
@@ -624,52 +656,16 @@ blockquote p {
     }
   }
 
-  blockquote {
-    margin: 0 .75em;
-    padding: 30px 0;
-    font-size: 2.3em;
-    line-height: 1.35;
-  }
-
-  blockquote:before {
-    font-size: 200px;
-    line-height: .8em;
-    margin-right: 0.15em;
-    vertical-align: -10em;
-  }
-
   .snippet-block {
     h1 {
-      line-height: 2.1;
       font-size: 5.2em;
     }
 
     p {
+      margin: 0;
       padding: 60px 0;
       line-height: 1.4;
       font-size: 1.8em;
-    }
-  }
-
-  .page-footer {
-    font-family: $raleway;
-    padding: 60px 0;
-    font-size: 1.33em;
-    line-height: 1.6em;
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-
-    li {
-      margin: 0;
-      padding: 0;
-    }
-
-    a {
-      color: $gray;
     }
   }
 }

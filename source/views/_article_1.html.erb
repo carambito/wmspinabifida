@@ -27,8 +27,18 @@
           <span class="clearfix visible-xs"></span>
           <% link_to '#learning', "data-toggle" => "tab" do %>
             <span class="boundary-box">
-              <strong>Learning opportunities</strong>
+              <strong>Learning Opportunities</strong>
               <span class="section-nav-item-detail">Let us help you through the need for IEPs, special education and special needs trust.</span>
+            </span>
+            <span class="tab-indicator"></span>
+          <% end %>
+        </li>
+
+        <li class="section-nav-item col-sm-4 col-xs-12">
+          <% link_to '#scholarship', "data-toggle" => "tab" do %>
+            <span class="boundary-box">
+              <strong>Scholarship Opportunities</strong>
+              <span class="section-nav-item-detail">Join our community and access a wide range of benefits for you and your child.</span>
             </span>
             <span class="tab-indicator"></span>
           <% end %>
@@ -128,21 +138,37 @@
           </li>
 
           <li>
-            <h3>Who to Contact:</h3>
-
-            <div class="">
-              <span>Mary Jo Boerman</span>
-              <span>616-772-2487</span>
-              <span><%= link_to 'boermanlaw.com', 'http://www.boermanlaw.com/' %></span>
-            </div>
-
+            <h3>Who to Contact</h3>
             <p>
-              An estate planning attorney could provide further information regarding Special Needs Trusts and whether such a trust is appropriate for you and your family.  They would be happy to provide further information regarding Special Needs Trusts and whether such a trust is appropriate for you and your family.
+              An estate planning attorney could provide further information regarding Special Needs Trusts and whether such a trust is appropriate for you and your family.
             </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-pane fade" id="scholarship">
+        <h2>Scholarship Opportunities</h2>
+        <ul class="information-roll">
+          <li>
+            <h3>Scholarships</h3>
+            <ul>
+              <li><%= link_to 'Camp', 'https://docs.google.com/forms/d/1kQ4OVpSsF9RAD6JEJCr9PLPH8d-mlhMwXO2sP0t49HI/viewform?usp=send_form' %> (due May 15, 2014)</li>
+              <li><%= link_to 'SB National Conference', 'https://docs.google.com/forms/d/19gTldB6AJR-wYtIuac9c9hAb2JTMRhlTnoKBlMe50cs/viewform?usp=send_form' %> (due May 15, 2014)</li>
+              <li><%= link_to 'Therapy', 'http://www.familyhopefoundation.org/programs/scholorships/guidelines-application' %> (due April 1 and Oct 1)</li>
+            </ul>
           </li>
 
           <li>
-            <h3>FAQs</h3>
+            <h3>Community of Support</h3>
+            <ul>
+              <li><%= link_to 'Emily, Nate &amp; Carson', 'http://babyboybush.blogspot.com', :target => "blank" %></li>
+              <li><%= link_to 'Andy, Leigh  &amp; Greyson', 'http://ourlittlegibblet.blogspot.com', :target => "blank"  %></li>
+              <li><%= link_to 'Kelly, Austin &amp; Grayden', 'http://ourredirectedflight.blogspot.com', :target => "blank"  %></li>
+              <li><%= link_to 'Kevin, Katie &amp; Gibson', 'http://alistmakerslife.com', :target => "blank"  %></li>
+              <li><%= link_to 'Dave, Lauren &amp; Ezra', 'http://hannonfamilyblessings.blogspot.com', :target => "blank"  %></li>
+              <li><%= link_to 'Coleman, Lauren &amp; Lewis', 'http://thelittlemiller.blogspot.com', :target => "blank"  %></li>
+              <li><%= link_to 'Dawn, Tom &amp; Andy', 'http://themathewschildren.blogspot.com', :target => "blank"  %></li>
+            </ul>
           </li>
         </ul>
       </div>

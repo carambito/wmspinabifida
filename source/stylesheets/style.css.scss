@@ -155,12 +155,20 @@ header h3 {
 //identity
 .main-identity {
   float: left;
+  width: 183px;
   margin: 0;
+  overflow: hidden;
 
   a {
+    width: 100%;
     @include inline-block;
-    width: 272px;
-    background: url('/images/logo.png') no-repeat left center;
+    background: url('/images/logo.png');
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 42px;
     text-indent: -9000px;
     outline: none;
   }

@@ -1,0 +1,91 @@
+<div class="divider-mini" id="act">
+  <span class="blank-hr"></span>
+</div>
+
+<section class="exploring article">
+  <div class="section-header">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Now What?</h1>
+        <p class="description">For parents and children living with spina bifida, there's always a "now what?” that comes next. No matter if you just heard the words or have known the diagnosis for years, every next step is a step into the unknown. But with the right community of people by your side, those steps don't have to be taken alone.</p>
+      </div>
+
+      <!-- Nav tabs -->
+      <ul class="nav section-nav row">
+        <li class="active col-sm-4 section-nav-item col-xs-12">
+          <span class="clearfix visible-xs"></span>
+          <% link_to '#community_resources', "data-toggle" => "tab" do %>
+            <span class="boundary-box">
+              <strong>Community Resources</strong>
+              <span class="section-nav-item-detail">From adaptive sports to therapy, these local resources provide opportunities.</span>
+            </span>
+            <span class="tab-indicator"></span>
+          <% end %>
+        </li>
+
+        <li class="col-sm-4 section-nav-item col-xs-12">
+          <span class="clearfix visible-xs"></span>
+          <% link_to '#learning', "data-toggle" => "tab" do %>
+            <span class="boundary-box">
+              <strong>Learning Opportunities</strong>
+              <span class="section-nav-item-detail">Let us help you through the need for IEPs, special education and special needs trust.</span>
+            </span>
+            <span class="tab-indicator"></span>
+          <% end %>
+        </li>
+
+        <li class="section-nav-item col-sm-4 col-xs-12">
+          <% link_to '#scholarship', "data-toggle" => "tab" do %>
+            <span class="boundary-box">
+              <strong>Scholarship Opportunities</strong>
+              <span class="section-nav-item-detail">Join our community and access a wide range of benefits for you and your child.</span>
+            </span>
+            <span class="tab-indicator"></span>
+          <% end %>
+        </li>
+      </ul>
+    </div><!--/container-->
+  </div>
+
+  <div class="info-content-container">
+    <div class="container-fluid tab-content">
+      <div class="tab-pane fade in active" id="community_resources">
+        <h2>Community Resources</h2>
+        <ul class="information-roll">
+          <% data.resources.community.each do |f| %>
+            <li>
+              <h3><%= f.section_title %></h3>
+              <ul>
+                <% f.section_link.each do |link| %>
+                  <li><%= link_to "#{link.name}", "#{link.url}", :target => "_blank" %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="tab-pane fade" id="learning">
+        <h2>Learning Opportunities</h2>
+        <%= partial "views/article_resources_learning" %>
+      </div>
+
+      <div class="tab-pane fade" id="scholarship">
+        <h2>Scholarship Opportunities</h2>
+        <ul class="information-roll">
+          <li>
+            <h3>Scholarships</h3>
+            <ul>
+              <% data.resources.scholarship.each do |f| %>
+                <li>
+                  <%= link_to "#{f.name}", "#{f.url}", :target => "_blank" %>
+                  (<%= f.notes %>)
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div><!--/container-->
+  </div>
+</section>

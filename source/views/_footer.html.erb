@@ -3,21 +3,21 @@
 <footer class="page-footer container-fluid">
   <div class="row">
     <div class="col-sm-4 col-xs-12">
-      <span>West Michigan Spina Bifida Organization</span>
-      <br /><span>235 Wealthy SE</span>
-      <br /><span>Grand Rapids, MI 4903</span>
+      <span><%= data.footer.content.title %></span>
+      <br /><span><%= data.footer.content.address %></span>
+      <br /><span><%= data.footer.content.address2 %></span>
     </div>
 
     <ul class="col-sm-4 col-xs-12">
-      <li class="nav-item"><%= link_to 'Spina Bifida Is', '#learn' %></li>
-      <li class="nav-item"><%= link_to 'Now What', '#act' %></li>
-      <li class="nav-item"><%= link_to 'Our Community', '#community' %></li>
-      <li class="nav-item"><%= link_to 'Get Involved', '#involved' %></li>
+      <% data.footer.navigation.each do |f| %>
+        <li class="nav-item"><%= link_to "#{f.link}", "#{f.url}" %></li>
+      <% end %>
     </ul>
 
     <ul class="col-sm-4 col-xs-12">
-      <li class="nav-item"><%= link_to 'Say Hello', '#hello' %></li>
-      <li class="nav-item"><%= link_to 'Visit us on Facebook', 'https://www.facebook.com/pages/West-Michigan-Spina-Bifida-Organization/323107167707286' %></li>
+      <% data.footer.navigation2.each do |f| %>
+        <li class="nav-item"><%= link_to "#{f.link}", "#{f.url}", :target => "#{f.target}" %></li>
+      <% end %>
     </ul>
   </div>
 

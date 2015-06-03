@@ -17,7 +17,7 @@
           <% link_to '#events', "data-toggle" => "tab" do %>
             <span class="boundary-box">
               <strong>Upcoming Events</strong>
-              <span class="section-nav-item-detail">WM Spina Bifida plans events throughout the year, the largest being Stroll 'N Roll.</span>
+              <span class="section-nav-item-detail">WMSBO plans events throughout the year, the largest being our Stroll 'N Roll.</span>
             </span>
             <span class="tab-indicator"></span>
           <% end %>
@@ -39,7 +39,7 @@
           <% link_to '#donate', "data-toggle" => "tab" do %>
             <span class="boundary-box">
               <strong>Donate</strong>
-              <span class="section-nav-item-detail">Support the advocacy efforts, scholarship funding and services of WM Spina Bifida.</span>
+              <span class="section-nav-item-detail">Support the advocacy efforts, scholarship funding and services of WMSBO.</span>
             </span>
             <span class="tab-indicator"></span>
           <% end %>
@@ -64,102 +64,34 @@
       <div class="tab-pane fade in active" id="events">
         <h2>Upcoming Events</h2>
 
-        <span style="font-size:11pt; color:#000000">
+        <p class="opening-content">
           We provide many great programs &amp; events every year for our local
           spina bifida community. Below is a list of the things we have
-          scheduled for 2013. Watch our Facebook page for further details about<br>
-          exact times &amp; dates.<span lang="en-us">
-          If you would like further details<br>
-          about any of the events listed,
-          please contact us!</span><br>
-          <br>
+          scheduled for 2015. Watch our Facebook page for further details about exact times &amp; dates.
+          If you would like further details about any of the events listed, please contact us!
+          
+          <br><br><strong>OUR PROGRAMS &amp; EVENT</strong>
 
-          OUR PROGRAMS &amp; EVENTS<br>
-          <br><br>
-
-          <strong>March</strong><br>
-          Adult Sled Wings tourney March 10-11<br>at Patterson Ice Arena.<br>
-          <br>
-          Youth Sled Wings tourneys March 10-11<br>at Patterson Ice Arena.<br>
-          <br>
-
-          <strong>April</strong><br>
-          "Bikes for the Rest of Us"<br>
-          at Mary Free Bed Rehabilitation Hospital.<br>
-          April 21.<br>
-          Registration deadline is April 13.<br>
-          For information call<br>
-          &nbsp;&nbsp;&nbsp;Maria Besta at 616-242-0352<br>
-          <br>
-
-          <strong>June</strong><br>
-          Jr Wheelchair Tennis<br>
-          Monday evenings<br>
-          June
-          10-August 19<br>
-          6:00pm-7:30pm<br>
-          Orchard Hills, 115 Crahen Ave SW, Grand Rapids<br>
-          Ages 7-18 years old<br>
-          Cost $40<br>
-          <br>
-
-          <strong>July</strong><br>
-          Jr Wheelchair Sports Camp<br/>July 29-August 2<br>
-          8:30am - 4:00pm Grand Valley State University<br>
-          Ages 7-18 years old<br>
-          Cost: Free to day campers, $175 for overnight campers who live more than 45 miles from GVSU.<br/>
-          <br>
-          Jr Wheelchair Tennis<br>
-          Monday evenings<br>
-          June 10-August 19<br>
-          6:00pm-7:30pm<br>
-          Orchard Hills, 115 Crahen Ave SW, Grand Rapids<br>
-          Ages 7-18 years old<br>Cost $40<br>
-          <br>
-
-          <strong>August</strong><br>
-          Jr Wheelchair Tennis<br>
-          Monday evenings<br>
-          June
-          10-August 19<br>
-          6:00pm-7:30pm<br>
-          Orchard Hills, 115 Crahen Ave SW, Grand Rapids<br>
-          Ages 7-18 years old<br>Cost $40<br>
-          <br>
-
-          <strong>September / October</strong><br>
-          <a target="_blank" href="strollnroll/index.html">Stroll 'n Roll</a>
-          (October 19, 10am-2pm at Frederik Meijer Gardens)<br>
-          <br>
-          The Annual Stroll N Roll is a family friendly event held to raise awareness about Spina Bifida and to celebrate those living with it. All proceeds are used for programs and services for people living with SB.</br>
-          <br>
-          Jr. Pacers basketball starts in September (Date &amp; times TBA)<br>
-          <br>
-          Jr. Sled Wings starts in October (Date &amp; times TBA)<br>
-          <br>
-          Wine'ing Without Dining<br>
-          A wine tasting event by 1 Plus 1 Therapy to benefit the WMSBO. <br>
-          Saturday September 21, 2013 5:00pm-7:30pm<br>
-          At Savannah Lakes Clubhouse, Savannah Drive, Zeeland, Michigan 49464<br>
-          For more info see:<br>
-          <a href="https://www.facebook.com/events/182363238611996/">https://www.facebook.com/events/182363238611996/</a>&nbsp;
-          <br>
-          <br/>
-
-          <strong>December</strong><br>
-          Christmas party December
-          7, 2013 at 5:00pm<br/>
-          The evening includes gifts for every child &amp; a visit from Santa!<br/>
-          Grandparents are also welcome.<br/>
-          Invitations are sent via mail for the party and RSVP's are required.<br/>
-          Do we have your address? Email us at wmisbo@gmail.com to make sure you get your invitation!<br/>
-        </span>
-
+          <span class="event-item">
+            <% data.events.item.each do |f| %>
+              <br><br>
+              <% if "#{f.link}" != "" %>
+                <% link_to "#{f.link}", :target => "_blank" do %>
+                  <strong><%= f.title %></strong>
+                <% end %>
+              <% else %>
+                <strong><%= f.title %></strong>
+              <% end %>
+              <br><%= f.description %>
+              <br><%= f.timeframe %>
+            <% end %>
+          </span>
+        </p>
       </div>
 
       <div class="tab-pane fade" id="volunteer">
         <h2>Volunteer opportunities</h2>
-        <p>Whether you're interested in hosting a support group, passing out brochures or helping with the annual Stroll N Roll, we would love to have your help! Contact us using the email <a href="mailto:wmisbo@gmail.com?subject=Volunteer&body=I would like to make myself available for volunteering. Please list the best time and way to contact you.">wmisbo@gmail.com</a> we will find a place for you!</p>
+        <p class="opening-content">Whether you're interested in hosting a support group, passing out brochures, or helping with the annual Stroll N Roll, we would love to have your help! Contact us at <a href="mailto:wmisbo@gmail.com?subject=Volunteer&body=I would like to make myself available for volunteering. Please list the best time and way to contact you.">wmisbo@gmail.com</a> we will find a place for you!</p>
       </div>
 
       <div class="tab-pane fade" id="donate">
@@ -178,11 +110,13 @@
 
       <div class="tab-pane fade" id="hello">
         <h2>Say Hello</h2>
-        <p>You can reach us through the e-mail address wmisbo@gmail.com.</p>
-        <p>We welcome your communication with our organization. We are always looking for new resources, programs & events that will enhance the lives of the West Michigan Spina Bifida community.</p>
+        <div class="opening-content">
+          <p>You can reach us through the e-mail address wmisbo@gmail.com.</p>
+          <p>We look forward to hearing from you. We are always looking for new resources, programs &amp; events that will enhance the lives of the West Michigan Spina Bifida community.</p>          
+        </div>
         <!-- Facebook Badge START -->
         <a href="http://www.facebook.com/pages/West-Michigan-Spina-Bifida-Organization/323107167707286" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="West Michigan Spina Bifida Organization"></a><br/><a href="http://www.facebook.com/pages/West-Michigan-Spina-Bifida-Organization/323107167707286" target="_TOP" title="West Michigan Spina Bifida Organization"><img src="http://badge.facebook.com/badge/323107167707286.2735.1337996407.png" style="border: 0px;" /></a><br/><a href="http://www.facebook.com/business/dashboard/" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Make your own badge!"></a><!-- Facebook Badge END --><br>
-</div>
+      </div>
     </div><!--/container-->
   </div>
 </section>

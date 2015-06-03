@@ -155,7 +155,7 @@ header h3 {
 //identity
 .main-identity {
   float: left;
-  width: 183px;
+  width: 200px;
   margin: 0;
   overflow: hidden;
 
@@ -648,8 +648,12 @@ blockquote {
   }
 
   .information-roll {
-    @include column-count(3);
+    @include column-count(4);
     @include column-gap(2em);
+
+    > li {
+      display: inline-block;
+    }
   }
 
   .section-header {
@@ -673,7 +677,12 @@ blockquote {
       margin: 0;
       padding: 60px 0;
       line-height: 1.4;
-      font-size: 1.8em;
+      font-size: 1.35em;
     }
+  }
+
+  .opening-content {
+    padding-right: 30%;
+    line-height: 1.5em;
   }
 }

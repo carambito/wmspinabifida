@@ -1,0 +1,22 @@
+content:
+  title: West Michigan Spina Bifida Organization
+  address: 235 Wealthy SE
+  address2: 'Grand Rapids, MI 49503'
+
+navigation:
+- link: Spina Bifida Is
+  url: '#learn'
+- link: Now What
+  url: '#act'
+- link: Our Community
+  url: '#community'
+- link: Get Involved
+  url: '#involved'
+
+navigation2:
+- link: Say Hello
+  url: '#involved'
+  target:
+- link: Visit us on Facebook
+  url: 'https://www.facebook.com/pages/West-Michigan-Spina-Bifida-Organization/323107167707286'
+  target: _blank
